@@ -389,3 +389,31 @@
 // const newQ = {...q};
 
 // console.log(newQ);
+
+// const soldier = {
+//     health: 100,
+//     armor: 50,
+//     sayHello: function() {
+//         console.log("Hello!");
+//     }
+// };
+
+// const john = {
+//     health: 150,
+// };
+
+// Object.setPrototypeOf(john, soldier);
+
+// john.sayHello();
+
+// const soldier = {
+//     health: 100,
+//     armor: 50,
+//     sayHello: function() {
+//         console.log("Hello!");
+//     }
+// };
+
+// const john = Object.create(soldier);
+
+// john.sayHello();
