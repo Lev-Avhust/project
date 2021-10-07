@@ -271,3 +271,121 @@
 // function compareNum (a, b) {
 //     return a - b;
 // }
+
+// let a = 5,
+//     b = a;
+
+// b = b + 5;
+
+// console.log(a);
+// console.log(b);
+
+// const obj = {
+//     a: 5,
+//     b: 1
+// };
+
+// console.log(obj.a);
+
+// const copy = obj;
+
+// copy.a = 10;
+
+// console.log(copy);
+// console.log(obj);
+
+// function copy(mainObj) {
+//     let objCopy = {};
+
+//     let key;
+//     for (key in mainObj) {
+//         objCopy[key] = mainObj[key];
+//     }
+//     return objCopy;
+
+// }
+
+// const numbers = {
+//     a: 2,
+//     b: 5,
+//     c: {
+//         x: 7,
+//         y: 4
+//     }
+// };
+
+// const newNumbers = copy(numbers);
+
+// newNumbers.a = 10;
+
+// console.log(newNumbers.a);
+// console.log(numbers.a);
+
+
+// const numbers = {
+//     a: 2,
+//     b: 5,
+//     c: {
+//         x: 7,
+//         y: 4
+//     }
+// };
+
+// const add = {
+//     d: 17,
+//     e: 20
+// }
+
+// console.log(Object.assign(numbers, add));
+
+
+// const add = {
+//     d: 17,
+//     e: 20
+// }
+
+// const copyAdd = Object.assign({}, add);
+
+// copyAdd.d = 71
+
+// console.log(add);
+// console.log(copyAdd);
+
+// const oldArr = ['a', 'b', 'c'];
+// const newArr = oldArr.slice();
+
+// newArr[1] = 'fjfjfjfj';
+
+// console.log(oldArr);
+// console.log(newArr);
+
+// const video = ['youtube', 'vimeo', 'rutube'],
+//       blogs = ['wordpress', 'lovejournal', 'blogger'],
+//       internet = [...video, ...blogs, 'vk', 'facebook'];
+
+// console.log(internet);
+
+// function log (a, b, c) {
+//     console.log(a);
+//     console.log(b);
+//     console.log(c);
+// };
+
+// const num = [2, 4, 6];
+
+// log(...num);
+
+// const arr = ['1', 'b'];
+
+// const newArr = [...arr];
+
+// console.log(newArr);
+
+// const q = {
+//     one: 1,
+//     two: 2
+// };
+
+// const newQ = {...q};
+
+// console.log(newQ);
