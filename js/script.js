@@ -646,18 +646,47 @@
 //     `;
 // });
 
+// const overlay = document.querySelector(".overlay")
+//       btns = document.querySelectorAll("button");
 
+// btn.onclick = function() {
+//     alert('click');
+// };
 
+// btn.addEventListener('click', () => {
+//     console.log("hover");
+// });
 
+// let i = 0;
+// const deleteElement = (e) => { 
+//     console.log(e.currentTarget);
+//     console.log(e.type);
+    // i++;
+    // if (i == 1) {
+    //     btn.removeEventListener('click', deleteElement)
+    // }
+// };
 
+// btn.addEventListener('click', deleteElement);
+// overlay.addEventListener('click', deleteElement);
 
+// btns.forEach(e => {
+//     e.addEventListener('click', deleteElement);
+// });
 
+// for (const i of btns) {
+//     i.addEventListener('click', deleteElement, {once: true});
+// }
 
+// e.target.remove();
 
+// const link = document.querySelector('a');
 
+// link.addEventListener('click', (e) => {
+//     e.preventDefault();
 
-
-
+//     console.log(e.target);
+// });
 
 
 
