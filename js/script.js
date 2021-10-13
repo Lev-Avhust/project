@@ -730,17 +730,93 @@
 //     });
 //     box.addEventListener('touchmove', (e) => {
 //         e.preventDefault();
-
+//                 sessionStorage , kkss, 
 //         console.log(e.targetTouches[0].pageX);
 //     });
-    // box.addEventListener('touchend', (e) => {
-    //     e.preventDefault();
+//     box.addEventListener('touchend', (e) => {
+//         e.preventDefault();
 
-    //     console.log('end');
-    // });
+//         console.log('end');
+//     });
 // });
 
 // touches
 // targetTouches
+
+// document.addEventListener('DOMContentLoaded', () => {
+//     const movieDB = {
+//         movies: [
+//             "Логан",
+//             "Лига справедливости",
+//             "Ла-ла лэнд",
+//             "Одержимость",
+//             "Скотт Пилигрим против..."
+//         ]
+//     };
+    
+//     const adv = document.querySelectorAll(".promo__adv img"),
+//           advHead = document.getElementsByClassName("promo__adv-title"), 
+//           poster = document.querySelector(".promo__bg"),
+//           genre = document.querySelector(".promo__genre"),
+//           movieList = document.querySelector(".promo__interactive-list"),
+//           addForm = document.querySelector("form.add"),
+//           addImput = document.querySelector(".adding__input"),
+//           checkBox = document.querySelector("[type='checkbox']");
+
+//     addForm.addEventListener('submit', (e) => {
+//         e.preventDefault();
+
+//         const newFilm = addImput.value;
+//         const favorite = checkBox.checked;
+//         console.log(newFilm);
+//         movieDB.movies.push(newFilm);
+//         sortArr(movieDB.movies);
+
+//         createMovieList(movieDB.movies, movieList);
+
+//         e.target.reset();
+
+//     });
+    
+//     const deleteAdv = (arr) => {
+//         arr.forEach(item => {
+//             item.remove();
+//             });
+//     }; 
+
+//     deleteAdv(adv); 
+    
+    
+
+//     const makeChanges = () => {
+//         genre.textContent = 'драма';
+    
+//         poster.style.backgroundImage = "url('img/bg.jpg')";
+//     };
+
+//     makeChanges();
+
+//     const sortArr = (arr) => {
+//         arr.sort();
+//     };
+    
+//     sortArr(movieDB.movies);
+    
+        
+       
+//     function createMovieList (films, parent) {
+//         parent.innerHTML = "";      
+//         films.forEach((film, i) => {
+//             parent.innerHTML +=`
+//                 <li class="promo__interactive-item">${i + 1} ${film}
+//                     <div class="delete"></div>
+//                 </li>
+//             `;
+//         });
+//     }  
+    
+//     createMovieList(movieDB.movies, movieList);
+
+// });
 
 
