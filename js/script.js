@@ -1002,6 +1002,35 @@
 
 // alert(`Цикл отработал за ${start - end} секунд`);
 
+// const box = document.querySelector('.box'),
+//       btn = document.querySelector('button');  
+
+// const width = box.clientWidth;
+// const height = box.clientHeight;
+// const width = box.offsetWidth;
+// const height = box.offsetHeight;
+// const width = box.scrollWidth;
+// const height = box.scrollHeight;
+
+// console.log(width, height);
+
+// btn.addEventListener('click', () => {
+//     // box.style.height = box.scrollHeight + 'px';
+//     console.log(box.scrollTop);
+// });
+
+// console.log(box.getBoundingClientRect().top);
+
+// const style = window.getComputedStyle(box);
+
+// console.log(style.display);
+
+// console.log(document.documentElement.scrollTop);
+
+// window.scrollBy(0, 400);
+
+// window.scrollTo(0, 400);
+
 window.addEventListener('DOMContentLoaded', () => {
 
     // tabs
@@ -1109,36 +1138,62 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     setClock('.timer', deadLine);
+
+// Modal
+
+    const modalTrigger = document.querySelectorAll('[data-model]'),
+                 modal = document.querySelector('.modal'),
+         modalCloseBtn = document.querySelector('[data-close]');
+         
+         function openModal() {
+            modal.classList.add('show');
+            modal.classList.remove('hide');
+            // modal.classList.toggle('show');
+            document.body.style.overflow = 'hidden';
+            clearInterval(modalTimerId);
+        }
+
+         modalTrigger.forEach(e => {
+            e.addEventListener('click', openModal);
+        });
+
+        function closeModal() {
+            modal.classList.add('hide');
+            modal.classList.remove('show');
+            // modal.classList.toggle('show');
+            document.body.style.overflow = '';
+        }
+
+        modalCloseBtn.addEventListener('click', closeModal);
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.code === 'Escape' && modal.classList.contains('show')) {
+                closeModal();
+            }
+        });
+
+        const modalTimerId = setTimeout(openModal, 6000);
+
+        function showModalByScroll() {
+            if (window.pageYOffset + document.documentElement.clientHeight >= document.documentElement.scrollHeight) {
+                openModal();
+                window.removeEventListener('scroll', showModalByScroll);
+            }
+        }
+
+        window.addEventListener('scroll', showModalByScroll);
 });
 
-// const box = document.querySelector('.box'),
-//       btn = document.querySelector('button');  
 
-// const width = box.clientWidth;
-// const height = box.clientHeight;
-// const width = box.offsetWidth;
-// const height = box.offsetHeight;
-// const width = box.scrollWidth;
-// const height = box.scrollHeight;
 
-// console.log(width, height);
 
-// btn.addEventListener('click', () => {
-//     // box.style.height = box.scrollHeight + 'px';
-//     console.log(box.scrollTop);
-// });
 
-// console.log(box.getBoundingClientRect().top);
-
-// const style = window.getComputedStyle(box);
-
-// console.log(style.display);
-
-// console.log(document.documentElement.scrollTop);
-
-// window.scrollBy(0, 400);
-
-// window.scrollTo(0, 400);
 
 
 
