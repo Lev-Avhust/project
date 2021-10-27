@@ -1694,6 +1694,7 @@ window.addEventListener('DOMContentLoaded', () => {
     .then(res => console.log(res));
 
 
+    
   let slideIndex = 1;
   let offSet = 0;
 
