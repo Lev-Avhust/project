@@ -1395,6 +1395,34 @@
 
 // console.log(JSON.parse(localStorage.getItem('Alex')));
 
+// new RegExp('pattern', 'flags');
+// /pattern/flags (I G M);
+// classes - \d
+//           \w
+//           \s
+// !slasses - \D
+//            \W
+//            \S
+
+// const ans = prompt('Введите ваше число?');
+
+// const reg = /\d/g;
+// console.log(ans.match(reg));
+
+// const str = 'my name is R2D2';
+
+// console.log(str.match(/\w\d\w\d/i));
+
+// console.log(str.match(/\D/ig));
+
+// console.log(ans.search(reg));
+// console.log(ans.match(reg));
+
+// const pass = prompt('Password');
+
+// console.log(pass.replace(/\./g, '*'));
+
+// console.log('12-34-56'.replace(/-/g, ':'));
 
 window.addEventListener('DOMContentLoaded', () => {
 
@@ -1825,11 +1853,15 @@ window.addEventListener('DOMContentLoaded', () => {
     dots.push(dot);
   }
 
+  function deleteNotDiggits(str) {
+    return +str.replace(/\D/g, '');
+  }
+
   next.addEventListener('click', () => {
-    if (offSet == +width.slice(0, width.length - 2) * (slides.length - 1)) {
+    if (offSet == deleteNotDiggits(width) * (slides.length - 1)) {
       offSet = 0;
     } else {
-      offSet += +width.slice(0, width.length - 2);
+      offSet += deleteNotDiggits(width);
     }
 
     slidesFiels.style.transform = `translateX(-${offSet}px)`;
@@ -1851,9 +1883,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
   prev.addEventListener('click', () => {
     if (offSet == 0) {
-      offSet = +width.slice(0, width.length - 2) * (slides.length - 1);
+      offSet = deleteNotDiggits(width) * (slides.length - 1);
     } else {
-      offSet -= +width.slice(0, width.length - 2);
+      offSet -= deleteNotDiggits(width);
     }
 
     slidesFiels.style.transform = `translateX(-${offSet}px)`;
@@ -1874,7 +1906,7 @@ window.addEventListener('DOMContentLoaded', () => {
       const slideTo = e.target.getAttribute('data-slide-to');
 
       slideIndex = slideTo;
-      offSet = +width.slice(0, width.length - 2) * (slideTo - 1);
+      offSet = deleteNotDiggits(width) * (slideTo - 1);
 
       slidesFiels.style.transform = `translateX(-${offSet}px)`;
 
