@@ -1,16 +1,16 @@
-function slider() {
+function slider({container, slide, nextArrow, prevArrow, totalCounter, currentCounter, wrapper, fields}) {
 
   let slideIndex = 1;
   let offSet = 0;
 
-  const slides = document.querySelectorAll('.offer__slide');
-  const slider = document.querySelector('.offer__slider');
-  const prev = document.querySelector('.offer__slider-prev');
-  const next = document.querySelector('.offer__slider-next');
-  const totoal = document.querySelector('#total');
-  const current = document.querySelector('#current');
-  const slidesWrapper = document.querySelector('.offer__slider-wrapper');
-  const slidesFiels = document.querySelector('.offer__slider-inner');
+  const slides = document.querySelectorAll(slide);
+  const slider = document.querySelector(container);
+  const prev = document.querySelector(prevArrow);
+  const next = document.querySelector(nextArrow);
+  const totoal = document.querySelector(totalCounter);
+  const current = document.querySelector(currentCounter);
+  const slidesWrapper = document.querySelector(wrapper);
+  const slidesFields = document.querySelector(fields);
   const width = window.getComputedStyle(slidesWrapper).width;
 
   if (slides.length < 10) {
@@ -21,9 +21,9 @@ function slider() {
     current.textContent = slideIndex;
   }
 
-  slidesFiels.style.width = 100 * slides.length + '%';
-  slidesFiels.style.display = 'flex';
-  slidesFiels.style.trasition = '0.5s all';
+  slidesFields.style.width = 100 * slides.length + '%';
+  slidesFields.style.display = 'flex';
+  slidesFields.style.trasition = '0.5s all';
 
   slidesWrapper.style.overflow = 'hidden';
 
@@ -102,7 +102,7 @@ function slider() {
       offSet += deleteNotDiggits(width);
     }
 
-    slidesFiels.style.transform = `translateX(-${offSet}px)`;
+    slidesFields.style.transform = `translateX(-${offSet}px)`;
 
     if (slideIndex == slides.length) {
       slideIndex = 1;
@@ -126,7 +126,7 @@ function slider() {
       offSet -= deleteNotDiggits(width);
     }
 
-    slidesFiels.style.transform = `translateX(-${offSet}px)`;
+    slidesFields.style.transform = `translateX(-${offSet}px)`;
 
     if (slideIndex == 1) {
       slideIndex = slides.length;
@@ -146,7 +146,7 @@ function slider() {
       slideIndex = slideTo;
       offSet = deleteNotDiggits(width) * (slideTo - 1);
 
-      slidesFiels.style.transform = `translateX(-${offSet}px)`;
+      slidesFields.style.transform = `translateX(-${offSet}px)`;
 
       indexManipulator(slides);
 
@@ -156,4 +156,4 @@ function slider() {
   
 }
 
-module.exports = slider;
+export default slider;

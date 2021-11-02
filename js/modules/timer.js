@@ -1,13 +1,11 @@
-function timer() {
-  
-  const deadLine = '2021-12-31';
+function timer(id, deadLine) {
 
   function getTimeRemaining(endtime) {
     const t = Date.parse(endtime) - Date.parse(new Date());
-    days = Math.floor(t / (1000 * 60* 60* 24)),
-    hours = Math.floor((t / (1000 * 60* 60) % 24)),
-    minutes = Math.floor((t / 1000 / 60) % 60),
-    seconds = Math.floor((t / 1000) % 60);
+    const days = Math.floor(t / (1000 * 60* 60* 24));
+    const hours = Math.floor((t / (1000 * 60* 60) % 24));
+    const minutes = Math.floor((t / 1000 / 60) % 60);
+    const seconds = Math.floor((t / 1000) % 60);
 
     return {
       'total': t,
@@ -51,7 +49,7 @@ function timer() {
     }
   }
 
-  setClock('.timer', deadLine);
+  setClock(id, deadLine);
 }
 
-module.exports = timer;
+export default timer;
