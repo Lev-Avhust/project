@@ -1,12 +1,3 @@
-// try {
-  
-// } catch (error) {
-//   console.log(error);
-// }
-
-// console.log('still normal');
-
-
 import tabs from './modules/tabs';
 import modal from './modules/modal';
 import timer from './modules/timer';
