@@ -1,34 +1,3 @@
-function* generator() {
-  yield 's';
-  yield 'r';
-  yield 'c';
-
-}
-
-const i = generator();
-
-console.log(i.next().value);
-console.log(i.next().value);
-console.log(i.next().value);
-console.log(i.next().value);
-
-function* count(n) {
-  for (let i = 0; i < 3; i++) {
-    yield i;
-    
-  }
-}
-
-for (const i of count(3)) {
-  console.log(i);
-}
-
-const counter = count(3);
-
-console.log(counter.next().value);
-console.log(counter.next().value);
-console.log(counter.next().value);
-
 import tabs from './modules/tabs';
 import modal from './modules/modal';
 import timer from './modules/timer';
@@ -58,3 +27,23 @@ window.addEventListener('DOMContentLoaded', () => {
     fields: '.offer__slider-inner'
   });
 });
+
+
+
+
+const btn = document.querySelector('.btn');
+const elem = document.querySelector('.box');
+let pos = 0;
+
+function myAnimation () {
+  pos++;
+  elem.style.top = pos + 'px';
+  elem.style.left = pos + 'px';
+
+  if (poss < 300) {
+    requestAnimationFrame(myAnimation);
+  }
+
+  btn.addEventListener('click', () => requestAnimationFrame(myAnimation));
+};
+
