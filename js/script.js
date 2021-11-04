@@ -1,3 +1,34 @@
+function* generator() {
+  yield 's';
+  yield 'r';
+  yield 'c';
+
+}
+
+const i = generator();
+
+console.log(i.next().value);
+console.log(i.next().value);
+console.log(i.next().value);
+console.log(i.next().value);
+
+function* count(n) {
+  for (let i = 0; i < 3; i++) {
+    yield i;
+    
+  }
+}
+
+for (const i of count(3)) {
+  console.log(i);
+}
+
+const counter = count(3);
+
+console.log(counter.next().value);
+console.log(counter.next().value);
+console.log(counter.next().value);
+
 import tabs from './modules/tabs';
 import modal from './modules/modal';
 import timer from './modules/timer';
